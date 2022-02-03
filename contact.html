@@ -30,6 +30,9 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- Country Code-->
+    <script src ="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -58,14 +61,16 @@
             <div class="col-lg-5 px-5 text-end">
                 <div class="h-100 d-inline-flex align-items-center py-3 me-4">
                     <small class="fa fa-phone-alt text-primary me-2"></small>
-                    <small>+91-9884088446</small>
+                    <a href="tel:+919884088446"> <small>+91-9884088446 |</small></a>
+
+                    <a href="tel:+916374258803"><small> +91-6374258803</small></a>
+
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
                     <a class="btn btn-sm-square bg-white text-primary me-1" href="https://api.whatsapp.com/send/?phone=+919884088446&text&app_absent=0"><i class="fab fa-whatsapp"></i></a>
                     <a class="btn btn-sm-square bg-white text-primary me-1" href="https://www.facebook.com/Apnafurniturewala-107461555182756/"><i class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-sm-square bg-white text-primary me-1" href="https://instagram.com/apnafurniturewala?utm_medium=copy_link"><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-0" href=""><i class="fab fa-linkedin-in"></i></a>
-                </div>
+                     </div>
             </div>
         </div>
     </div>
@@ -131,7 +136,68 @@
                             <h1 class="display-5 mb-4">Contact Us</h1>
                         </div>
                         <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                        <form>
+
+
+                        <form action="https://formsubmit.co/368b3eed4116c806deeeaea3a2f70e6b" name="quote-form"
+                                method="post" enctype="multipart/form-data">
+                                <div class="row g-3">
+                                    <div class="col-12 col-sm-6">
+                                        <input type="text" name="name" class="form-control border-0"
+                                            placeholder="Your Name" style="height: 55px;" required>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <input type="email" name="email" class="form-control border-0"
+                                            placeholder="Your Email" style="height: 55px;" required>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <input type="tel" name="phone" id="phone" class="form-control border-0"
+                                            placeholder="Your Mobile" style="height: 55px;" required>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <select name="service" class="form-select border-0" style="height: 55px;"
+                                            required>
+                                            <option selected>Select Service</option>
+                                            <option selected>Select Service</option>
+                                            <option value="1">New Furniture</option>
+                                            <option value="2">Furniture Repair</option>
+                                            <option value="3">Sofa Repair</option>
+                                            <option value="4">Sofa Cleaning</option>
+                                            <option value="5">Mattress</option>
+                                            <option value="6">3M Scotchguard</option>
+                                            <option value="7">Curtain Dry Cleaning</option>
+                                            <option value="8">Curtain Steam Ironing</option>
+                                            <option value="9">Fire Resitant for Furniture</option>
+                                            <option value="10">Lazy Interior</option>
+                                            <option value="11">Customized Interior</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea name="specialNote" class="form-control border-0"
+                                            placeholder="Special Note"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <input type="file" class="form-control" name="file" onchange="LoadFile(event)" id="file">
+                                        <input type="hidden" id="fileData" name="fileData" />
+                                        <input type="hidden" id="mimeType" name="mimeType" />
+                                        <input type="hidden" id="fileName" name="fileName" />
+                                    </div>
+
+                                    <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html">
+                                    <input type="hidden" name="_subject" value="New submission!">
+                                    <input type="hidden" name="_template" value="table">
+                                    <input type="hidden" name="_captcha" value="false">
+
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 py-3" id="get-quote-btn"
+                                            type="submit">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+
+
+
+
+                        <!--form>
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
@@ -161,7 +227,7 @@
                                     <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
                                 </div>
                             </div>
-                        </form>
+                        </form-->
                     </div>
                 </div>
                 <div class="col-lg-6 pe-lg-0" style="min-height: 400px;">
@@ -249,6 +315,24 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <script src="build/js/intlTelInput.js"></script>
+    <script>
+    // Vanilla Javascript
+    var input = document.querySelector("#phone");
+    window.intlTelInput(input,({
+      // options here
+    }));
+ 
+    $(document).ready(function() {
+        $('.iti__flag-container').click(function() { 
+          var countryCode = $('.iti__selected-flag').attr('title');
+          var countryCode = countryCode.replace(/[^0-9]/g,'')
+          $('#phone').val("");
+          $('#phone').val("+"+countryCode+" "+ $('#phone').val());
+       });
+    });
+  </script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
