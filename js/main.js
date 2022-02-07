@@ -112,11 +112,72 @@ function LoadFile(event) {
 }
 
 const scriptURL =
-	"https://script.google.com/macros/s/AKfycby122m8SpeJgEFdHxuw-ZdDPAB_EvS17qT8fThWt7rObLzKmdyoGWq-TRQk6sInezNC/exec";
+	"https://script.google.com/macros/s/AKfycbz5pNnVEaF3ZHmDUYcsHi24Y-DpSdhgCdM94qWlDwWGfzBgQTBhYnq6a_Jul74WVWc58A/exec"; // v1.0.2
+const mailURL = "https://formsubmit.co/ajax/apnafurniturewalaa@gmail.com";
+
 const quoteForm = document.forms["quote-form"];
+
 quoteForm.addEventListener("submit", async (e) => {
-	// e.preventDefault();
-	await fetch(scriptURL, { method: "POST", body: new FormData(quoteForm) })
-		.then((response) => console.log(response))
+	e.preventDefault();
+
+	const submitBtn = quoteForm.elements["quote-submit-btn"];
+	submitBtn.disabled = true;
+	submitBtn.textContent = "Loading...";
+
+	const formData = new FormData(quoteForm);
+
+	// Upload to GoogleSheets
+	await fetch(scriptURL, { method: "POST", body: formData })
+		.then((response) => console.log(response.ok))
 		.catch((error) => console.log(error));
+
+	const removeFields = [
+		"fileData",
+		"mimeType",
+		"fileName",
+	];
+	const formObj = Object.fromEntries(formData);
+	Object.keys(formObj).forEach((key) => {
+		if (removeFields.includes(key)) delete formObj[key];
+	});
+
+	fetch(mailURL, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+			Accept: "application/json"
+		},
+		body: JSON.stringify(formObj)
+	})
+		.then((response) => response.json())
+		.then((data) => console.log(data))
+		.catch((error) => console.log(error));
+
+	const popup = Notification({
+		position: "top-right",
+		duration: 3000
+	});
+
+	popup.success({
+		title: "Thank You",
+		message: "We will contact you soon!"
+	});
+
+	quoteForm.reset();
+	submitBtn.disabled = false;
+	submitBtn.textContent = "Submit";
 });
+
+// const queryString = window.location.search;
+// const urlParams = new URLSearchParams(queryString);
+// if(urlParams.has('thankyou')) {
+// 	const popup = Notification({
+// 		position: 'top-right',
+// 		duration: 3000
+// 	  });
+
+// 	  popup.success({
+// 		title: 'Thank You',
+// 		message: 'We will contact you soon!'
+// 	  });
+// }
