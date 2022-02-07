@@ -111,6 +111,41 @@ function LoadFile(event) {
 	reader.readAsDataURL(file);
 }
 
+/**
+ * Initiate portfolio lightbox
+ */
+const portfolioLightbox = GLightbox({
+	selector: ".portfolio-lightbox"
+});
+
+/**
+ * Initiate portfolio details lightbox
+ */
+const portfolioDetailsLightbox = GLightbox({
+	selector: ".portfolio-details-lightbox",
+	width: "90%",
+	height: "90vh"
+});
+
+/**
+ * Portfolio details slider
+ */
+new Swiper(".portfolio-details-slider", {
+	speed: 400,
+	loop: true,
+	autoplay: {
+		delay: 5000,
+		disableOnInteraction: false
+	},
+	pagination: {
+		el: ".swiper-pagination",
+		type: "bullets",
+		clickable: true
+	}
+});
+
+// Form Handling
+
 const scriptURL =
 	"https://script.google.com/macros/s/AKfycbz5pNnVEaF3ZHmDUYcsHi24Y-DpSdhgCdM94qWlDwWGfzBgQTBhYnq6a_Jul74WVWc58A/exec"; // v1.0.2
 const mailURL = "https://formsubmit.co/ajax/apnafurniturewalaa@gmail.com";
@@ -131,11 +166,7 @@ quoteForm.addEventListener("submit", async (e) => {
 		.then((response) => console.log(response.ok))
 		.catch((error) => console.log(error));
 
-	const removeFields = [
-		"fileData",
-		"mimeType",
-		"fileName",
-	];
+	const removeFields = ["fileData", "mimeType", "fileName"];
 	const formObj = Object.fromEntries(formData);
 	Object.keys(formObj).forEach((key) => {
 		if (removeFields.includes(key)) delete formObj[key];
