@@ -30,6 +30,157 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        body
+{
+  background-color:#eee
+}
+.wrap
+{
+  margin:50px auto 0 auto;
+  width:100%;
+  display:flex;
+  align-items:space-around;
+  max-width:1200px;
+}
+.tile
+{
+  width:380px;
+  height:380px;
+  margin:10px;
+  background-color:#99aeff;
+  display:inline-block;
+  background-size:cover;
+  position:relative;
+  cursor:pointer;
+  transition: all 0.4s ease-out;
+  box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.44);
+  overflow:hidden;
+  color:white;
+  font-family:'Roboto';
+  
+}
+.tile img
+{
+  height:100%;
+  width:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:0;
+  transition: all 0.4s ease-out;
+}
+.tile .text
+{
+/*   z-index:99; */
+  position:absolute;
+  padding:30px;
+  height:calc(100% - 60px);
+}
+.tile h1
+{
+ 
+  font-weight:300;
+  margin:0;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+.tile h2
+{
+  font-weight:100;
+  margin:20px 0 0 0;
+  font-style:italic;
+   transform: translateX(200px);
+}
+.tile p
+{
+  font-weight:300;
+  margin:20px 0 0 0;
+  line-height: 25px;
+/*   opacity:0; */
+  transform: translateX(-200px);
+  transition-delay: 0.2s;
+}
+.animate-text
+{
+  opacity:0;
+  transition: all 0.6s ease-in-out;
+}
+.tile:hover
+{
+/*   background-color:#99aeff; */
+box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
+  transform:scale(1.05);
+}
+.tile:hover img
+{
+  opacity: 0.2;
+}
+.tile:hover .animate-text
+{
+  transform:translateX(0);
+  opacity:1;
+}
+.dots
+{
+  position:absolute;
+  bottom:20px;
+  right:30px;
+  margin: 0 auto;
+  width:30px;
+  height:30px;
+  color:currentColor;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-around;
+  
+}
+
+.dots span
+{
+    width: 5px;
+    height:5px;
+    background-color: currentColor;
+    border-radius: 50%;
+    display:block;
+  opacity:0;
+  transition: transform 0.4s ease-out, opacity 0.5s ease;
+  transform: translateY(30px);
+ 
+}
+
+.tile:hover span
+{
+  opacity:1;
+  transform:translateY(0px);
+}
+
+.dots span:nth-child(1)
+{
+   transition-delay: 0.05s;
+}
+.dots span:nth-child(2)
+{
+   transition-delay: 0.1s;
+}
+.dots span:nth-child(3)
+{
+   transition-delay: 0.15s;
+}
+
+
+@media (max-width: 1000px) {
+  .wrap {
+   flex-direction: column;
+    width:400px;
+  }
+}
+    </style>
+
+
+
+
 </head>
 
 <body>
@@ -129,171 +280,232 @@
             <div class="section-title text-center">
                 <h1 class="display-5 mb-5">Our Services</h1>
             </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service-1.jpg" alt="">
-                        </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h4 class="mb-3">General Carpentry</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
+            <div class="wrap">
+                <div class="tile"> 
+                  <img src='https://images.unsplash.com/photo-1464054313797-e27fb58e90a9?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=996&q=80'/>
+                  <div class="text">
+                  <h1>Lorem ipsum.</h1>
+                  <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+                  <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
+                <div class="dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  </div>
+                 </div>
+                
+                
+                <div class="tile"> 
+                  <img src='https://images.unsplash.com/photo-1458668383970-8ddd3927deed?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1004&q=80'/>
+                  <div class="text">
+                  <h1>Lorem ipsum.</h1>
+                  <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+                  <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
+                <div class="dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  </div>
+                 </div>
+                  
+                  <div class="tile"> 
+                  <img src='https://images.unsplash.com/photo-1422393462206-207b0fbd8d6b?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80'/>
+                  <div class="text">
+                  <h1>Lorem ipsum.</h1>
+                  <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+                  <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
+                <div class="dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  </div>
+                 </div>
                 </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service-2.jpg" alt="">
-                        </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h4 class="mb-3">Furniture Manufacturing</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
+
+
+                <div class="wrap">
+                    <div class="tile"> 
+                      <img src='https://images.unsplash.com/photo-1464054313797-e27fb58e90a9?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=996&q=80'/>
+                      <div class="text">
+                      <h1>Lorem ipsum.</h1>
+                      <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+                      <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
+                    <div class="dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                      </div>
+                     </div>
+                    
+                    
+                    <div class="tile"> 
+                      <img src='https://images.unsplash.com/photo-1458668383970-8ddd3927deed?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1004&q=80'/>
+                      <div class="text">
+                      <h1>Lorem ipsum.</h1>
+                      <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+                      <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
+                    <div class="dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                      </div>
+                     </div>
+                      
+                      <div class="tile"> 
+                      <img src='https://images.unsplash.com/photo-1422393462206-207b0fbd8d6b?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80'/>
+                      <div class="text">
+                      <h1>Lorem ipsum.</h1>
+                      <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+                      <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
+                    <div class="dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                      </div>
+                     </div>
                     </div>
+
+
+                    <div class="wrap">
+                        <div class="tile"> 
+                          <img src='https://images.unsplash.com/photo-1464054313797-e27fb58e90a9?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=996&q=80'/>
+                          <div class="text">
+                          <h1>Lorem ipsum.</h1>
+                          <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+                          <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
+                        <div class="dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                          </div>
+                          </div>
+                         </div>
+                        
+                        
+                        <div class="tile"> 
+                          <img src='https://images.unsplash.com/photo-1458668383970-8ddd3927deed?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1004&q=80'/>
+                          <div class="text">
+                          <h1>Lorem ipsum.</h1>
+                          <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+                          <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
+                        <div class="dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                          </div>
+                          </div>
+                         </div>
+                          
+                          <div class="tile"> 
+                          <img src='https://images.unsplash.com/photo-1422393462206-207b0fbd8d6b?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80'/>
+                          <div class="text">
+                          <h1>Lorem ipsum.</h1>
+                          <h2 class="animate-text">More lorem ipsum bacon ipsum.</h2>
+                          <p class="animate-text">Bacon ipsum dolor amet pork belly tri-tip turducken, pancetta bresaola pork chicken meatloaf. Flank sirloin strip steak prosciutto kevin turducken. </p>
+                        <div class="dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                          </div>
+                          </div>
+                         </div>
+                        </div>
+                  
+                  
                 </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service-3.jpg" alt="">
-                        </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h4 class="mb-3">Furniture Remodeling</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service-4.jpg" alt="">
-                        </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h4 class="mb-3">Wooden Floor</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service-5.jpg" alt="">
-                        </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h4 class="mb-3">Wooden Furniture</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service-6.jpg" alt="">
-                        </div>
-                        <div class="p-4 text-center border border-5 border-light border-top-0">
-                            <h4 class="mb-3">Custom Work</h4>
-                            <p>Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.</p>
-                            <a class="fw-medium" href="">Read More<i class="fa fa-arrow-right ms-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
     <!-- Service End -->
 
 
     <!-- Quote Start -->
-    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
-        <div class="container quote px-lg-0">
-            <div class="row g-0 mx-lg-0">
-                <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/quote.jpg" style="object-fit: cover;" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="p-lg-5 pe-lg-0">
-                        <div class="section-title text-start">
-                            <h1 class="display-5 mb-4">Free Quote</h1>
+    <section id="quote-section">
+        <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+            <div class="container quote px-lg-0">
+                <div class="row g-0 mx-lg-0">
+                    <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
+                        <div class="position-relative h-100">
+                            <img class="position-absolute img-fluid w-100 h-100" src="img/quote.jpg"
+                                style="object-fit: cover;" alt="">
                         </div>
-                        <p class="mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet</p>
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Your Mobile" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <select class="form-select border-0" style="height: 55px;">
-                                        <option selected>Select A Service</option>
-                                        <option value="1">Service 1</option>
-                                        <option value="2">Service 2</option>
-                                        <option value="3">Service 3</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <textarea class="form-control border-0" placeholder="Special Note"></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
-                                </div>
+                    </div>
+                    <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                        <div class="p-lg-5 pe-lg-0">
+                            <div class="section-title text-start">
+                                <h1 class="display-5 mb-4">Free Quote</h1>
                             </div>
-                        </form>
+                            <p class="mb-4 pb-2">We would love to be in touch with you! Please enter your details and our team will get back to ASAP..</p>
+
+                            <form action="https://formsubmit.co/368b3eed4116c806deeeaea3a2f70e6b" name="quote-form"
+                                method="post" enctype="multipart/form-data">
+                                <div class="row g-3">
+                                    <div class="col-12 col-sm-6">
+                                        <input type="text" name="name" class="form-control border-0"
+                                            placeholder="Your Name" style="height: 55px;" required>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <input type="email" name="email" class="form-control border-0"
+                                            placeholder="Your Email" style="height: 55px;" required>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <input type="text" name="phone" class="form-control border-0"
+                                            placeholder="Your Mobile" style="height: 55px;" required>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <select name="service" class="form-select border-0" style="height: 55px;"
+                                            required>
+                                            <option selected>Select Service</option>
+                                            <option value="1">New Furniture</option>
+                                            <option value="2">Furniture Repair</option>
+                                            <option value="3">Sofa Repair</option>
+                                            <option value="4">Sofa Cleaning</option>
+                                            <option value="5">Mattress</option>
+                                            <option value="6">3M Scotchguard</option>
+                                            <option value="7">Curtain Dry Cleaning</option>
+                                            <option value="8">Curtain Steam Ironing</option>
+                                            <option value="9">Fire Resitant for Furniture</option>
+                                            <option value="10">Lazy Interior</option>
+                                            <option value="11">Customized Interior</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea name="specialNote" class="form-control border-0"
+                                            placeholder="Special Note"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <input type="file" class="form-control" name="file" onchange="LoadFile(event)" id="file">
+                                        <input type="hidden" id="fileData" name="fileData" />
+                                        <input type="hidden" id="mimeType" name="mimeType" />
+                                        <input type="hidden" id="fileName" name="fileName" />
+                                    </div>
+
+                                    <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html">
+                                    <input type="hidden" name="_subject" value="New submission!">
+                                    <input type="hidden" name="_template" value="table">
+                                    <input type="hidden" name="_captcha" value="false">
+
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 py-3" id="get-quote-btn"
+                                            type="submit">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <!-- Quote End -->
 
-
-    <!-- Testimonial Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="section-title text-center">
-                <h1 class="display-5 mb-5">Testimonial</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel">
-                <div class="testimonial-item text-center">
-                    <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 90px; height: 90px;">
-                    <div class="testimonial-text text-center p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                        <h5 class="mb-1">Client Name</h5>
-                        <span class="fst-italic">Profession</span>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/testimonial-2.jpg" style="width: 90px; height: 90px;">
-                    <div class="testimonial-text text-center p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                        <h5 class="mb-1">Client Name</h5>
-                        <span class="fst-italic">Profession</span>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/testimonial-3.jpg" style="width: 90px; height: 90px;">
-                    <div class="testimonial-text text-center p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea clita.</p>
-                        <h5 class="mb-1">Client Name</h5>
-                        <span class="fst-italic">Profession</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial End -->
-        
+       
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -308,7 +520,6 @@
                         <a class="btn btn-outline-light btn-social" href="https://api.whatsapp.com/send/?phone=+919884088446&text&app_absent=0"><i class="fab fa-whatsapp"></i></a>
                         <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/Apnafurniturewala-107461555182756/"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-outline-light btn-social" href="https://instagram.com/apnafurniturewala?utm_medium=copy_link"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
