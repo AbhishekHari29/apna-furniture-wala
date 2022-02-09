@@ -33,6 +33,7 @@
     <link href="lib/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="lib/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="lib/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css' rel='stylesheet'>
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -53,7 +54,7 @@
 
 
     <!-- Topbar Start -->
-    <div class="container-fluid bg-light p-0">
+    <div id="top-section" class="container-fluid bg-light p-0">
         <div class="row gx-0 d-none d-lg-flex">
             <div class="col-lg-7 px-5 text-start">
                 <div class="h-100 d-inline-flex align-items-center py-3 me-4">
@@ -68,19 +69,19 @@
             <div class="col-lg-5 px-5 text-end">
                 <div class="h-100 d-inline-flex align-items-center py-3 me-4">
                     <small class="fa fa-phone-alt text-primary me-2"></small>
-                    <a href="tel:+919884088446"> <small>+91-9884088446 |</small></a>
+                    <a target="_blank" href="tel:+919884088446"> <small>+91-9884088446 |</small></a>
 
-                    <a href="tel:+916374258803"><small> +91-6374258803</small></a>
+                    <a target="_blank" href="tel:+916374258803"><small> +91-6374258803</small></a>
 
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn btn-sm-square bg-white text-primary me-1"
+                    <a target="_blank" class="btn btn-sm-square bg-white text-primary me-1"
                         href="https://api.whatsapp.com/send/?phone=+919884088446&text&app_absent=0"><i
                             class="fab fa-whatsapp"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-1"
+                    <a target="_blank" class="btn btn-sm-square bg-white text-primary me-1"
                         href="https://www.facebook.com/Apnafurniturewala-107461555182756/"><i
                             class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-0"
+                    <a target="_blank" class="btn btn-sm-square bg-white text-primary me-0"
                         href="https://instagram.com/apnafurniturewala?utm_medium=copy_link"><i
                             class="fab fa-instagram"></i></a>
                 </div>
@@ -100,11 +101,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="#top-section" class="nav-item nav-link active">Home</a>
                 <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="service.html" class="nav-item nav-link">Service</a>
+                <a href="#service-section" class="nav-item nav-link">Service</a>
                 <a href="gallery.html" class="nav-item nav-link">Gallery</a>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="#contact-section" class="nav-item nav-link">Contact</a>
             </div>
             <a href="#quote-section" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Get A Quote<i
                     class="fa fa-arrow-right ms-3"></i></a>
@@ -114,7 +115,7 @@
 
 
     <!-- Carousel Start -->
-    <div class="container-fluid p-0 pb-5">
+    <div id="home-section" class="container-fluid p-0 pb-5">
         <div class="owl-carousel header-carousel position-relative">
             <div class="owl-carousel-item position-relative">
                 <img class="img-fluid carousal-image carousal-image" src="img/carousel-5.jpg" alt="">
@@ -185,52 +186,32 @@
 
 
     <!-- Feature Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="d-flex align-items-center justify-content-between mb-2">
-                        <div class="d-flex align-items-center justify-content-center bg-light"
-                            style="width: 60px; height: 60px;">
-                            <i class="fa fa-user-check fa-2x text-primary"></i>
-                        </div>
-                        <h1 class="display-1 text-light mb-0">01</h1>
+    <div class="container-xxl">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="brands_slider_container">
+                        <div class="owl-carousel owl-theme brands_slider">
+                            <div class="owl-item">
+                                <div class="brands_item d-flex flex-column justify-content-center"><img src="img/brands (5).png" alt=""></div>
+                            </div>
+                            <div class="owl-item">
+                                <div class="brands_item d-flex flex-column justify-content-center"><img src="img/brands (2).png" alt=""></div>
+                            </div>
+                            <div class="owl-item">
+                                <div class="brands_item d-flex flex-column justify-content-center"><img src="img/brands (3).png" alt=""></div>
+                            </div>
+                            <div class="owl-item">
+                                <div class="brands_item d-flex flex-column justify-content-center"><img src="img/brands (4).png" alt=""></div>
+                            </div>
+                            <div class="owl-item">
+                                <div class="brands_item d-flex flex-column justify-content-center"><img src="img/brands (6).jpg" alt=""></div>
+                            </div>
+                        </div> <!-- Brands Slider Navigation -->
+                        <div class="brands_nav brands_prev"><i class="fas fa-chevron-left"></i></div>
+                        <div class="brands_nav brands_next"><i class="fas fa-chevron-right"></i></div>
                     </div>
-                    <h5>Creative Designers</h5>
                 </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
-                    <div class="d-flex align-items-center justify-content-between mb-2">
-                        <div class="d-flex align-items-center justify-content-center bg-light"
-                            style="width: 60px; height: 60px;">
-                            <i class="fa fa-check fa-2x text-primary"></i>
-                        </div>
-                        <h1 class="display-1 text-light mb-0">02</h1>
-                    </div>
-                    <h5>Quality Products</h5>
-                </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="d-flex align-items-center justify-content-between mb-2">
-                        <div class="d-flex align-items-center justify-content-center bg-light"
-                            style="width: 60px; height: 60px;">
-                            <i class="fa fa-drafting-compass fa-2x text-primary"></i>
-                        </div>
-                        <h1 class="display-1 text-light mb-0">03</h1>
-                    </div>
-                    <h5>Free Consultation</h5>
-                </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
-                    <div class="d-flex align-items-center justify-content-between mb-2">
-                        <div class="d-flex align-items-center justify-content-center bg-light"
-                            style="width: 60px; height: 60px;">
-                            <i class="fa fa-headphones fa-2x text-primary"></i>
-                        </div>
-                        <h1 class="display-1 text-light mb-0">04</h1>
-                    </div>
-                    <h5>Customer Support</h5>
-                </div>
-
-                
-
             </div>
         </div>
     </div>
@@ -239,7 +220,7 @@
 
 
     <!-- About Start -->
-    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+    <div id="about-section" class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
         <div class="container about px-lg-0">
             <div class="row g-0 mx-lg-0">
                 <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
@@ -288,8 +269,8 @@
 
 
     <!-- Service Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
+    <div id="service-section" class="container-xxl py-5">
+        <div class="container mt-5">
             <div class="section-title text-center">
                 <h1 class="display-5 mb-5">Our Services</h1>
             </div>
@@ -299,7 +280,7 @@
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service (10).jpg" alt="">
+                            <img class="img-fluid" src="img/services/service (10).jpg" alt="">
                         </div>
                         <div class="p-4 text-center border border-5 border-light border-top-0">
                             <h4 class="mb-3">Furniture Manufacturing</h4>
@@ -316,7 +297,7 @@
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service (14).jpg" alt="">
+                            <img class="img-fluid" src="img/services/service (14).jpg" alt="">
                         </div>
                         <div class="p-4 text-center border border-5 border-light border-top-0">
                             <h4 class="mb-3">Furniture Repair</h4>
@@ -334,7 +315,7 @@
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service (13).jpg" alt="">
+                            <img class="img-fluid" src="img/services/service (13).jpg" alt="">
                         </div>
                         <div class="p-4 text-center border border-5 border-light border-top-0">
                             <h4 class="mb-3">Sofa Repair/Cleaning</h4>
@@ -351,7 +332,7 @@
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service (4).jpg" alt="">
+                            <img class="img-fluid" src="img/services/service (4).jpg" alt="">
                         </div>
                         <div class="p-4 text-center border border-5 border-light border-top-0">
                             <h4 class="mb-3">Matress</h4>
@@ -369,7 +350,7 @@
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service (2).jpg" alt="">
+                            <img class="img-fluid" src="img/services/service (2).jpg" alt="">
                         </div>
                         <div class="p-4 text-center border border-5 border-light border-top-0">
                             <h4 class="mb-3">3M Scotch Guard</h4>
@@ -385,7 +366,7 @@
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service (1).jpg" alt="">
+                            <img class="img-fluid" src="img/services/service (1).jpg" alt="">
                         </div>
                         <div class="p-4 text-center border border-5 border-light border-top-0">
                             <h4 class="mb-3">Curtain Cleaning/Steaming</h4>
@@ -401,7 +382,7 @@
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service-6.jpg" alt="">
+                            <img class="img-fluid" src="img/services/service-6.jpg" alt="">
                         </div>
                         <div class="p-4 text-center border border-5 border-light border-top-0">
                             <h4 class="mb-3">Fire Resistant for Furniture</h4>
@@ -417,7 +398,7 @@
                 <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/service (12).jpg" alt="">
+                            <img class="img-fluid" src="img/services/service (12).jpg" alt="">
                         </div>
                         <div class="p-4 text-center border border-5 border-light border-top-0">
                             <h4 class="mb-3">Interior Designing</h4>
@@ -434,9 +415,8 @@
     </div>
     <!-- Services End -->
 
-
     <!-- Feature Start -->
-    <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+    <div id="feature-section" class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
         <div class="container feature px-lg-0">
             <div class="row g-0 mx-lg-0">
                 <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.5s">
@@ -465,7 +445,7 @@
                                             <i class="fa fa-award fa-2x text-primary"></i>
                                         </div>
                                         <div class="ms-4">
-                                            <p class="mb-2">Gurantted</p>
+                                            <p class="mb-2">Guaranteed</p>
                                             <h5 class="mb-0">Works</h5>
                                         </div>
                                     </div>
@@ -530,8 +510,8 @@
     </div>
     <!-- Feature End -->
 
-    <!-- Projects Start -->
-    <div class="container-xxl py-5">
+    <!-- Gallery Start -->
+    <div id="gallery-section" class="container-xxl py-5">
         <div class="container">
             <div class="section-title text-center">
                 <h1 class="display-5 mb-5">Gallery</h1>
@@ -547,7 +527,6 @@
                 </div>
             </div>
             <div class="row g-4 portfolio-container">
-
 
                 <div class="col-lg-4 col-md-6 portfolio-item chair wow fadeInUp" data-wow-delay="0.1s">
                     <div class="rounded overflow-hidden">
@@ -600,8 +579,6 @@
                         </div>
                     </div>
                 </div>
-
-            
             </div>
 
             <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
@@ -612,11 +589,10 @@
 
         </div>
     </div>
-    <!-- Projects End -->
+    <!-- Gallery End -->
 
     <!-- Quote Start -->
-    <section id="quote-section">
-        <div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+        <div id="quote-section" class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
             <div class="container quote px-lg-0">
                 <div class="row g-0 mx-lg-0">
                     <div class="col-lg-6 ps-lg-0" style="min-height: 400px;">
@@ -692,49 +668,161 @@
                 </div>
             </div>
         </div>
-    </section>
     <!-- Quote End -->
+
+    <!-- Testimonial Start -->
+    <div id="testimonial-section" class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="section-title text-center">
+                <h1 class="display-5 mb-5">Testimonial</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel">
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/testimonial-1.jpg"
+                        style="width: 90px; height: 90px;">
+                    <div class="testimonial-text text-center p-4">
+                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna
+                            ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea
+                            clita.</p>
+                        <h5 class="mb-1">Client Name</h5>
+                        <span class="fst-italic">Profession</span>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/testimonial-2.jpg"
+                        style="width: 90px; height: 90px;">
+                    <div class="testimonial-text text-center p-4">
+                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna
+                            ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea
+                            clita.</p>
+                        <h5 class="mb-1">Client Name</h5>
+                        <span class="fst-italic">Profession</span>
+                    </div>
+                </div>
+                <div class="testimonial-item text-center">
+                    <img class="img-fluid bg-light p-2 mx-auto mb-3" src="img/testimonial-3.jpg"
+                        style="width: 90px; height: 90px;">
+                    <div class="testimonial-text text-center p-4">
+                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna
+                            ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea
+                            clita.</p>
+                        <h5 class="mb-1">Client Name</h5>
+                        <span class="fst-italic">Profession</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+    <!-- Contact Start -->
+    <div id="contact-section" class="container-fluid bg-light overflow-hidden px-lg-0" style="margin: 6rem 0;">
+        <div class="container contact px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 contact-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="p-lg-5 ps-lg-0">
+                        <div class="section-title text-start">
+                            <h1 class="display-5 mb-4">Contact Us</h1>
+                        </div>
+                        <p class="mb-4">We would love to be in touch with you! Feel free to contact us.</p>
+
+                        <div class="row g-4">
+                            <div class="col-12 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
+                                        <i class="fas fa-map-marker-alt fa-2x text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <h5 class="mb-2">Location</h5>
+                                        <p class="mb-0">#202, 8 Bharathi Salai, Royapettah, Chennai</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
+                                        <i class="fa fa-envelope fa-2x text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <h5 class="mb-2">Email</h5>
+                                        <p class="mb-0">apnafurniturewalaa@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
+                                        <i class="fa fa-phone-alt fa-2x text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <h5 class="mb-2">Phone</h5>
+                                        <p class="mb-0">+91-6374258803 | +91-9884088446</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white" style="width: 60px; height: 60px;">
+                                        <i class="fa fa-clock fa-2x text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <h5 class="mb-2">Timing</h5>
+                                        <p class="mb-0">Mon - Sat : 10.00 AM - 07.00 PM</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            
+                    </div>
+                </div>
+                <div class="col-lg-6 pe-lg-0" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <iframe class="position-absolute w-100 h-100" style="object-fit: cover;"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8124.547563336788!2d80.26231831746786!3d13.059120507481795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52678eefc429f1%3A0xde5f25fdd767ff3c!2sApna%20furniture%20wala!5e0!3m2!1sen!2sin!4v1644211798499!5m2!1sen!2sin"
+                        frameborder="0" allowfullscreen="" aria-hidden="false"
+                        tabindex="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
+        <div class="container py-3">
             <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Address</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>202, 8 Bharathi Salai, Royapettah, Chennai
-                    </p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91-9884088446</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>apnafurniturewalaa@gmail.com</p>
+                
+                <!-- Footer Note -->
+                <div class="col-md-6">
+                    <h1 class="text-light mb-4">Apna Furniture Wala</h1>
+                    <p class="mb-">Thank you for taking the time to visit my webpage. <br> Have a great day!</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social"
+                        <a target="_blank" class="btn btn-outline-light btn-social"
                             href="https://api.whatsapp.com/send/?phone=+919884088446&text&app_absent=0"><i
                                 class="fab fa-whatsapp"></i></a>
-                        <a class="btn btn-outline-light btn-social"
+                        <a target="_blank" class="btn btn-outline-light btn-social"
                             href="https://www.facebook.com/Apnafurniturewala-107461555182756/"><i
                                 class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social"
+                        <a target="_blank" class="btn btn-outline-light btn-social"
                             href="https://instagram.com/apnafurniturewala?utm_medium=copy_link"><i
                                 class="fab fa-instagram"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Services</h4>
-                    <a class="btn btn-link" href="">General Carpentry</a>
-                    <a class="btn btn-link" href="">Furniture Remodeling</a>
-                    <a class="btn btn-link" href="">Wooden Floor</a>
-                    <a class="btn btn-link" href="">Wooden Furniture</a>
-                    <a class="btn btn-link" href="">Custom Carpentry</a>
-                </div>
+
+                <!-- Quick Links -->
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="about.html">About Us</a>
-                    <a class="btn btn-link" href="service.html">Contact Us</a>
-                    <a class="btn btn-link" href="service.html">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
+                    <a class="btn btn-link" href="#top-section">Home</a>
+                    <a class="btn btn-link" href="about.html">About</a>
+                    <a class="btn btn-link" href="#service-section">Service</a>
+                    <a class="btn btn-link" href="gallery.html">Gallery</a>
+                    <a class="btn btn-link" href="#contact-section">Contact</a>
+                    <a class="btn btn-link" href="#quote-section">Get Quote</a>
                 </div>
-                <div class="col-lg-3 col-md-6">
+
+                <!-- Newsletter -->
+                <!-- <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Newsletter</h4>
                     <p>Subsribe for the Latest News & Offers @ApnaFurnitureWala</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
@@ -742,18 +830,18 @@
                         <button type="button"
                             class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SUBSCRIBE</button>
                     </div>
-                </div>
+                </div> -->
+
             </div>
         </div>
         <div class="container">
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">ApnaFurnitureWala</a>, All Right Reserved.
+                        &copy; <strong>ApnaFurnitureWala</strong>, All Right Reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a class="border-bottom" href="">#####</a>
+                        Designed By <a class="border-bottom" target="_blank" href="https://abhishekhari29.github.io/">ABA Developers</a>
                     </div>
                 </div>
             </div>
@@ -773,15 +861,11 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <!-- <script src="lib/isotope/isotope.pkgd.min.js"></script> -->
-    <!-- <script src="lib/lightbox/js/lightbox.min.js"></script> -->
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="lib/notification/notification.js"></script>
     <script src="lib/aos/aos.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="lib/glightbox/js/glightbox.min.js"></script>
-    <script src="lib/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="lib/php-email-form/validate.js"></script>
-    <!-- <script src="lib/purecounter/purecounter.js"></script> -->
     <script src="lib/swiper/swiper-bundle.min.js"></script>
     <script src="lib/typed.js/typed.min.js"></script>
     <script src="lib/waypoints/noframework.waypoints.js"></script>
