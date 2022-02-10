@@ -297,8 +297,8 @@
 
 .brands_slider_container {
     height: 130px;
-    padding-left: 97px;
-    padding-right: 97px;
+    /* padding-left: 97px;
+    padding-right: 97px; */
     background: #fff
 }
 
@@ -343,13 +343,13 @@
     color: #676767
 }
 
-.brands_prev {
+/* .brands_prev {
     left: 40px
 }
 
 .brands_next {
     right: 40px
-}
+} */
 
 /*** About ***/
 @media (min-width: 992px) {

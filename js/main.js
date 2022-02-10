@@ -44,7 +44,7 @@
 			brandsSlider.owlCarousel({
 				loop: true,
 				autoplay: true,
-				autoplayTimeout: 2500,
+				autoplayTimeout: 2000,
 				nav: false,
 				dots: false,
 				autoWidth: true,
