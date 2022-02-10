@@ -191,42 +191,72 @@ quoteForm.addEventListener("submit", async (e) => {
 	submitBtn.disabled = true;
 	submitBtn.textContent = "Loading...";
 
-	const formData = new FormData(quoteForm);
-
-	// Upload to GoogleSheets
-	await fetch(scriptURL, { method: "POST", body: formData })
-		.then((response) => console.log(response.ok))
-		.catch((error) => console.log(error));
-
-	const removeFields = ["fileData", "mimeType", "fileName"];
-	const formObj = Object.fromEntries(formData);
-	Object.keys(formObj).forEach((key) => {
-		if (removeFields.includes(key)) delete formObj[key];
-	});
-
-	fetch(mailURL, {
-		method: "POST",
-		headers: {
-			"Content-Type": "application/json",
-			Accept: "application/json"
-		},
-		body: JSON.stringify(formObj)
-	})
-		.then((response) => response.json())
-		.then((data) => console.log(data))
-		.catch((error) => console.log(error));
-
 	const popup = Notification({
 		position: "top-right",
 		duration: 3000
 	});
 
-	popup.success({
-		title: "Thank You",
-		message: "We will contact you soon!"
-	});
+	const name = quoteForm["name"].value;
+	const email = quoteForm["email"].value;
+	const phone = quoteForm["phone"].value;
+	const service = quoteForm["service"].value;
 
-	quoteForm.reset();
+	var validated = true;
+	var errorTitle = "Invalid Input",
+		errorMessage = "";
+	if (!validator.isAlpha(name)) {
+		errorMessage = "Name contains only Alphabets";
+		validated = false;
+	} else if (!validator.isEmail(email)) {
+		errorMessage = "Invalid Email address";
+		validated = false;
+	} else if (!validator.isMobilePhone(phone, "en-IN")) {
+		errorMessage = "Invalid Phone Number";
+		validated = false;
+	} else if (validator.isEmpty(service)) {
+		errorMessage = "Select a Service";
+		validated = false;
+	}
+
+	if (validated) {
+		const formData = new FormData(quoteForm);
+
+		// Upload to GoogleSheets
+		await fetch(scriptURL, { method: "POST", body: formData })
+			.then((response) => console.log(response.ok))
+			.catch((error) => console.log(error));
+
+		const removeFields = ["fileData", "mimeType", "fileName"];
+		const formObj = Object.fromEntries(formData);
+		Object.keys(formObj).forEach((key) => {
+			if (removeFields.includes(key)) delete formObj[key];
+		});
+
+		// Send Email
+		fetch(mailURL, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				Accept: "application/json"
+			},
+			body: JSON.stringify(formObj)
+		})
+			.then((response) => response.json())
+			.then((data) => console.log(data))
+			.catch((error) => console.log(error));
+
+		popup.success({
+			title: "Thank You",
+			message: "We will contact you soon!"
+		});
+
+		quoteForm.reset();
+	} else {
+		popup.error({
+			title: errorTitle,
+			message: errorMessage
+		});
+	}
 	submitBtn.disabled = false;
 	submitBtn.textContent = "Submit";
 });
