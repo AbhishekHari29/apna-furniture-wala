@@ -76,6 +76,11 @@
 }
 
 /*** Navbar ***/
+
+.bg-custom {
+	background-color: #AB7442;
+}
+
 .navbar .dropdown-toggle::after {
 	border: none;
 	content: "\f107";
